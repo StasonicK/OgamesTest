@@ -1,17 +1,26 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace GamePlay.Spawners
 {
     public class CubesSpawnersChooser : MonoBehaviour
     {
         [SerializeField] private CubeSpawner[] _cubeSpawners;
-        [SerializeField] private int _cubesCount;
         [SerializeField] private CubeMaterialGetter _cubeMaterialGetter;
         [SerializeField] private int _spawnDelaySec;
+        [SerializeField] private int _minCubesCount;
+        [SerializeField] private int _maxCubesCount;
 
         private const int SEC_TO_MILLISECS_MULTIPLIER = 1000;
+
         private int _cubeCounter = 0;
+        private int _cubesCount;
+
+        private void Awake()
+        {
+            _cubesCount = Random.Range(_minCubesCount, _maxCubesCount + 1);
+        }
 
         public async UniTask SpawnCubes()
         {
