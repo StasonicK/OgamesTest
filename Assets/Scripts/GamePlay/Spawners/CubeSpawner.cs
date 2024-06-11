@@ -13,6 +13,9 @@ namespace GamePlay.Spawners
         {
             _newCube = Instantiate(_cubePrefab, transform);
             _newCube.SetMaterial(material);
+
+            if (_newCube.TryGetComponent(out CubeNumberSetter cubeNumberSetter))
+                cubeNumberSetter.SetValue($"{number}");
         }
     }
 }
