@@ -1,3 +1,4 @@
+using GamePlay.Spawners;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ namespace UI
         [SerializeField] private Button _button2;
         [SerializeField] private Button _button3;
         [SerializeField] private Button _button4;
+        [SerializeField] private CubesSpawnersChooser _cubesSpawnersChooser;
 
         private void Awake()
         {
@@ -21,6 +23,7 @@ namespace UI
         private void OnButton1Click()
         {
             Debug.Log("OnButton1Click");
+            _cubesSpawnersChooser.SpawnCubes();
             _button1.enabled = false;
         }
 
