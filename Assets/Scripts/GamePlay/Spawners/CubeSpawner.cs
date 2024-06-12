@@ -8,14 +8,15 @@ namespace GamePlay.Spawners
         [SerializeField] private CubeMaterialSetter _cubePrefab;
 
         private CubeMaterialSetter _newCube;
+        private CubeMovement _cubeMovement;
 
-        public void Spawn(int number, Material material)
+        public CubeMovement Spawn(int number, Material material)
         {
             _newCube = Instantiate(_cubePrefab, transform);
             _newCube.SetMaterial(material);
-
-            if (_newCube.TryGetComponent(out CubeNumberSetter cubeNumberSetter))
-                cubeNumberSetter.SetValue($"{number}");
+            _newCube.GetComponent<CubeNumberSetter>().SetValue($"{number}");
+            _cubeMovement = _newCube.GetComponent<CubeMovement>();
+            return _cubeMovement;
         }
     }
 }

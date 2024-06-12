@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace GamePlay.Cube
 {
+    [RequireComponent(typeof(MeshRenderer))]
     public class CubeMaterialSetter : MonoBehaviour
     {
         private MeshRenderer _meshRenderer;
