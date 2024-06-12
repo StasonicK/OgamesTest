@@ -7,7 +7,7 @@ namespace Editor
     [CustomEditor(typeof(CubeForwardDirection))]
     public class CubeForwardDirectionEditor : UnityEditor.Editor
     {
-        private static float _rayLength;
+        private static float _rayLength = 2f;
         private static Color _color = Color.red;
 
         [DrawGizmo(GizmoType.Active | GizmoType.Pickable | GizmoType.NonSelected)]

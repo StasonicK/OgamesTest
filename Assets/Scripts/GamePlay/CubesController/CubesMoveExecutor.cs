@@ -27,7 +27,7 @@ namespace GamePlay.CubesController
             for (int i = 0; i < _cubeMovements.Count; i++)
             {
                 // if (_cubeMovements[i].OnGround)
-                    _cubeMovements[i].SetMove();
+                _cubeMovements[i].SetMove();
             }
         }
     }

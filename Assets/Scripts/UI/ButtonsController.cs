@@ -1,4 +1,6 @@
+using Cysharp.Threading.Tasks;
 using GamePlay.CubesController;
+using GamePlay.Human;
 using GamePlay.Spawners;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +15,7 @@ namespace UI
         [SerializeField] private Button _button4;
         [SerializeField] private CubesSpawnersChooser _cubesSpawnersChooser;
         [SerializeField] private CubesMoveExecutor _cubesMoveExecutor;
+        [SerializeField] private AttackedCubeSelector _attackedCubeSelector;
 
         private void Awake()
         {
@@ -25,7 +28,7 @@ namespace UI
         private void OnButton1Click()
         {
             Debug.Log("OnButton1Click");
-            _cubesSpawnersChooser.SpawnCubes();
+            _cubesSpawnersChooser.SpawnCubes().Forget();
             _button1.enabled = false;
         }
 
@@ -39,6 +42,7 @@ namespace UI
         private void OnButton3Click()
         {
             Debug.Log("OnButton3Click");
+            _attackedCubeSelector.StartAttackMode().Forget();
             _button3.enabled = false;
         }
 
