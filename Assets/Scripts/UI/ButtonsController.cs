@@ -1,3 +1,4 @@
+using GamePlay.CubesController;
 using GamePlay.Spawners;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ namespace UI
         [SerializeField] private Button _button3;
         [SerializeField] private Button _button4;
         [SerializeField] private CubesSpawnersChooser _cubesSpawnersChooser;
+        [SerializeField] private CubesMoveExecutor _cubesMoveExecutor;
 
         private void Awake()
         {
@@ -30,6 +32,7 @@ namespace UI
         private void OnButton2Click()
         {
             Debug.Log("OnButton2Click");
+            _cubesMoveExecutor.ForceMoveAll();
             _button2.enabled = false;
         }
 

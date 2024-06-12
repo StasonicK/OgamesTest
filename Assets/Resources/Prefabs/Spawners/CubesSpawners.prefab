@@ -57,9 +57,10 @@ MonoBehaviour:
   - {fileID: 4022594148424062724}
   - {fileID: 518135923740743493}
   _cubeMaterialGetter: {fileID: 8994149020744883869}
-  _spawnDelaySec: 1
-  _minCubesCount: 6
-  _maxCubesCount: 15
+  _spawnDelaySec: 0.2
+  _minCubesCount: 5
+  _maxCubesCount: 5
+  _cubesMoveExecutor: {fileID: 0}
 --- !u!114 &8994149020744883869
 MonoBehaviour:
   m_ObjectHideFlags: 0
