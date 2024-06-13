@@ -1,4 +1,5 @@
 using GamePlay.Cube;
+using GamePlay.Human;
 using UnityEngine;
 
 namespace GamePlay.Ball
@@ -13,8 +14,7 @@ namespace GamePlay.Ball
             }
             else if (other.collider.TryGetComponent(out CubeMovement cubeMovement))
             {
-                cubeMovement.SetStop();
-                // remove this from dict
+                AttackedCubeSelector.Instance.CheckHitCube(cubeMovement);
                 Destroy(gameObject);
             }
         }

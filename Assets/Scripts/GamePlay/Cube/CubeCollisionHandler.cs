@@ -18,9 +18,13 @@ namespace GamePlay.Cube
         private void OnCollisionEnter(Collision other)
         {
             if (other.collider.TryGetComponent(out CubeCollisionHandler cubeCollisionHandler))
+            {
                 TryReverseMovement();
+            }
             else if (other.collider.CompareTag(Constants.WALL_TAG))
+            {
                 TryReverseMovement();
+            }
             else if (other.collider.CompareTag(Constants.FLOOR_TAG))
             {
                 if (_onGround == false)

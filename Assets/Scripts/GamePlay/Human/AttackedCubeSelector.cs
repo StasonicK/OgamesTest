@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using GamePlay.Cube;
 using UnityEngine;
 
@@ -10,20 +11,58 @@ namespace GamePlay.Human
         [SerializeField] private ShootCube _shootCube;
         [SerializeField] private float _shootDelay;
 
-        private CubeMovement _cubeMovement;
-        private bool _gotTarget;
+        private static AttackedCubeSelector _instance;
+
+        private CubeMovement _attackedCubeMovement;
+        private int _attackedCubeNumber;
+
+        private void Awake() =>
+            DontDestroyOnLoad(this);
+
+        public static AttackedCubeSelector Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = FindObjectOfType<AttackedCubeSelector>();
+
+                return _instance;
+            }
+        }
 
         public async UniTask StartAttackMode()
         {
             while (_cubesHolder.InactiveCount > 0 || _cubesHolder.ActiveCount > 0)
             {
-                if (_cubesHolder.GetRandomCube(out CubeMovement cubeMovement))
+                if (_attackedCubeMovement == null)
                 {
-                    _cubeMovement = cubeMovement;
-                    _gotTarget = true;
-                    _shootCube.Shoot(_cubeMovement.transform);
-                    await UniTask.Delay((int)(_shootDelay * Constants.SEC_TO_MILLISECS_MULTIPLIER));
+                    if (_cubesHolder.GetRandomCube(out CubeMovement cubeMovement))
+                    {
+                        _attackedCubeMovement = cubeMovement;
+                        _attackedCubeNumber = cubeMovement.GetComponent<CubeNumberSetter>().Number;
+                        await Shoot();
+                    }
                 }
+                else
+                {
+                    await Shoot();
+                }
+            }
+        }
+
+        private async Task Shoot()
+        {
+            _shootCube.Shoot(_attackedCubeMovement.transform);
+            await UniTask.Delay((int)(_shootDelay * Constants.SEC_TO_MILLISECS_MULTIPLIER));
+        }
+
+        public void CheckHitCube(CubeMovement cubeMovement)
+        {
+            if (cubeMovement.GetComponent<CubeNumberSetter>().Number == _attackedCubeNumber)
+            {
+                _attackedCubeMovement = null;
+                cubeMovement.SetStop();
+                CubesHolder.Instance.AddHitCube(cubeMovement);
             }
         }
     }
