@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using GamePlay.Cube;
+using GamePlay.Spawners;
 using UnityEngine;
 
 namespace GamePlay.Human
@@ -16,9 +17,6 @@ namespace GamePlay.Human
         private CubeMovement _attackedCubeMovement;
         private int _attackedCubeNumber;
 
-        private void Awake() =>
-            DontDestroyOnLoad(this);
-
         public static AttackedCubeSelector Instance
         {
             get
@@ -29,6 +27,9 @@ namespace GamePlay.Human
                 return _instance;
             }
         }
+
+        private void Awake() =>
+            DontDestroyOnLoad(this);
 
         public async UniTask StartAttackMode()
         {

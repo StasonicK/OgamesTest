@@ -8,9 +8,9 @@ namespace GamePlay.Cube
         [SerializeField] private float _speed;
 
         private CubeRandomRotation _cubeRandomRotation;
-        private int _forward = 1;
-        private bool _rotated;
-        private bool _move;
+        private int _directionMultiplier = 1;
+        private bool _isRotated;
+        private bool _isMovable;
 
         public bool OnGround { private set; get; }
 
@@ -21,12 +21,12 @@ namespace GamePlay.Cube
 
         private void Update()
         {
-            if (_move && OnGround)
+            if (_isMovable && OnGround)
             {
-                if (_rotated == false)
+                if (_isRotated == false)
                 {
                     _cubeRandomRotation.Rotate();
-                    _rotated = true;
+                    _isRotated = true;
                 }
 
                 MoveTowards();
@@ -35,19 +35,20 @@ namespace GamePlay.Cube
 
         private void MoveTowards() =>
             transform.position =
-                Vector3.MoveTowards(transform.position, transform.position + transform.forward * 10 * _forward,
+                Vector3.MoveTowards(transform.position,
+                    transform.position + transform.forward * 10 * _directionMultiplier,
                     _speed * Time.deltaTime);
 
         public void SetMove() =>
-            _move = true;
+            _isMovable = true;
 
         public void SetOnGround() =>
             OnGround = true;
 
         public void SetStop() =>
-            _move = false;
+            _isMovable = false;
 
         public void ReverseDirection() =>
-            _forward = -_forward;
+            _directionMultiplier = -_directionMultiplier;
     }
 }

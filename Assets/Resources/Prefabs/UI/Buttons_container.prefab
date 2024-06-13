@@ -79,9 +79,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dcc8cf4e9e675c41b798488879647f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button1: {fileID: 5589095721843775486}
-  _button2: {fileID: 3746968850273256169}
-  _button3: {fileID: 5191984928209545944}
+  _spawnCubesButton: {fileID: 5589095721843775486}
+  _forceMoveAllButton: {fileID: 3746968850273256169}
+  _startAttackModeButton: {fileID: 5191984928209545944}
   _button4: {fileID: 2099595911913058161}
 --- !u!1 &654481377463326478
 GameObject:

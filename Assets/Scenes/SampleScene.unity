@@ -457,18 +457,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6541443008350334822}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &677884774 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1904380255036767113, guid: 62f02ee9ebcd9e147a695a6df619b57d,
-    type: 3}
-  m_PrefabInstance: {fileID: 787945025402516570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5843f050e9684d279fcb9db04e058408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,18 +1290,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4df6e27cfdde834aa8fdc7c7a69cebd, type: 3}
---- !u!114 &6687299145056927904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2495199705780508786, guid: b4df6e27cfdde834aa8fdc7c7a69cebd,
-    type: 3}
-  m_PrefabInstance: {fileID: 6687299145056927903}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d436d149d3648a785c8e14fa6a6abb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8188799553399419520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1387,21 +1363,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5307420276395435226, guid: 35a18889819bc584b910e1126335c5b6,
-        type: 3}
-      propertyPath: _cubesMoveExecutor
-      value: 
-      objectReference: {fileID: 5994793430545648836}
-    - target: {fileID: 5307420276395435226, guid: 35a18889819bc584b910e1126335c5b6,
-        type: 3}
-      propertyPath: _attackedCubeSelector
-      value: 
-      objectReference: {fileID: 6687299145056927904}
-    - target: {fileID: 5307420276395435226, guid: 35a18889819bc584b910e1126335c5b6,
-        type: 3}
-      propertyPath: _cubesSpawnersChooser
-      value: 
-      objectReference: {fileID: 677884774}
     - target: {fileID: 5692444995924752929, guid: 35a18889819bc584b910e1126335c5b6,
         type: 3}
       propertyPath: m_AnchorMax.y

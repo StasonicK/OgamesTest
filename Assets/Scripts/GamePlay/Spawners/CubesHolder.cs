@@ -3,7 +3,7 @@ using System.Linq;
 using GamePlay.Cube;
 using UnityEngine;
 
-namespace GamePlay.Human
+namespace GamePlay.Spawners
 {
     public class CubesHolder : MonoBehaviour
     {
@@ -15,6 +15,7 @@ namespace GamePlay.Human
         private Dictionary<int, CubeMovement> _attackedCubesMovements;
         private Dictionary<int, CubeMovement> _hitCubesMovements;
         private int _number;
+        private int _index;
 
         public int InactiveCount => _inactiveCubesMovements.Count;
         public int ActiveCount => _attackedCubesMovements.Count;
@@ -54,12 +55,18 @@ namespace GamePlay.Human
 
         public bool GetRandomCube(out CubeMovement cubeMovement)
         {
-            int index = Random.Range(0, _inactiveCubesMovements.Count);
-            _number = _inactiveCubesMovements.ElementAt(index).Value.GetComponent<CubeNumberSetter>().Number;
-
-            if (_attackedCubesMovements.TryAdd(_number, _inactiveCubesMovements.ElementAt(index).Value))
+            if (_inactiveCubesMovements.Count == 0)
             {
-                cubeMovement = _inactiveCubesMovements.ElementAt(index).Value;
+                cubeMovement = null;
+                return false;
+            }
+
+            _index = Random.Range(0, _inactiveCubesMovements.Count);
+            _number = _inactiveCubesMovements.ElementAt(_index).Value.GetComponent<CubeNumberSetter>().Number;
+
+            if (_attackedCubesMovements.TryAdd(_number, _inactiveCubesMovements.ElementAt(_index).Value))
+            {
+                cubeMovement = _inactiveCubesMovements.ElementAt(_index).Value;
                 _inactiveCubesMovements.Remove(_number);
                 return true;
             }

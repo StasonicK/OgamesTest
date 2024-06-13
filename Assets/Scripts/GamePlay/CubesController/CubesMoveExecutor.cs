@@ -6,15 +6,28 @@ namespace GamePlay.CubesController
 {
     public class CubesMoveExecutor : MonoBehaviour
     {
+        private static CubesMoveExecutor _instance;
+
         private List<CubeMovement> _cubeMovements;
-        private bool _forceMove;
+        private bool _needForceMove;
+
+        public static CubesMoveExecutor Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = FindObjectOfType<CubesMoveExecutor>();
+
+                return _instance;
+            }
+        }
 
         public void Initialize(int count) =>
             _cubeMovements = new List<CubeMovement>(count);
 
         public void Add(CubeMovement cubeMovement)
         {
-            if (_forceMove)
+            if (_needForceMove)
                 cubeMovement.SetMove();
 
             _cubeMovements.Add(cubeMovement);
@@ -22,13 +35,10 @@ namespace GamePlay.CubesController
 
         public void ForceMoveAll()
         {
-            _forceMove = true;
+            _needForceMove = true;
 
             for (int i = 0; i < _cubeMovements.Count; i++)
-            {
-                // if (_cubeMovements[i].OnGround)
                 _cubeMovements[i].SetMove();
-            }
         }
     }
 }
