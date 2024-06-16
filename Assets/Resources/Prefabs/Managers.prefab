@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7031187248677843916}
   - component: {fileID: 6335995558456331881}
   m_Layer: 0
-  m_Name: CubesMoveExecutor
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
