@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using GamePlay.Cube;
+using UI;
 using UnityEngine;
 
 namespace GamePlay.CubesController
@@ -48,7 +49,10 @@ namespace GamePlay.CubesController
             _number = cube.GetComponent<CubeNumberHolder>().Number;
 
             if (_hitCubes.TryAdd(_number, cube))
+            {
                 _attackedCubeMovement = null;
+                AttackingCubeNumberShower.Instance.Clear();
+            }
         }
 
         public bool GetRandomShotCube(out CubeMovement randomCube)
@@ -67,6 +71,7 @@ namespace GamePlay.CubesController
             {
                 _aliveCubes.Remove(_number, out randomCube);
                 NonAggressiveCubesHolder.Instance.RemoveCube(_number);
+                AttackingCubeNumberShower.Instance.SetNumber($"{_number}");
                 return true;
             }
 

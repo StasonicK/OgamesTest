@@ -29,7 +29,8 @@ namespace GamePlay.Cube
                     if (_target == null)
                         return;
 
-                    _cubeRotation.RotateToTarget(_target.position);
+                    _cubeRotation.RotateToTarget(new Vector3(_target.position.x, transform.position.y,
+                        _target.position.z));
                     MoveToTarget();
                 }
                 else
