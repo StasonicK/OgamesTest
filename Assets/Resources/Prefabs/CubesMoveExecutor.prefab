@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8831229534894030142}
   - component: {fileID: 1397018503452091546}
   - component: {fileID: 6303171935196674484}
+  - component: {fileID: 7031187248677843916}
+  - component: {fileID: 6335995558456331881}
   m_Layer: 0
   m_Name: CubesMoveExecutor
   m_TagString: Untagged
@@ -55,5 +57,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a9eb70db0774f598a0ca9850eba64ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7031187248677843916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050061282281817953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5519d516b0374259b47574def74346b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6335995558456331881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050061282281817953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047a2ac28f6a45318079de9a2e5fbbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

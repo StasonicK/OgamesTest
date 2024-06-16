@@ -24,9 +24,7 @@ namespace GamePlay.CubesController
 
         public void ChooseAggressor()
         {
-            if (NonAggressiveCubesHolder.Instance.NonAggressiveAliveCubes.Count == 0)
-                return;
-
+            // NonAggressiveCubesHolder.Instance.RecoverNonAggressiveAliveCubes();
             CubesMoveExecutor.Instance.ForceSetMovableAll();
 
             int index = Random.Range(0, NonAggressiveCubesHolder.Instance.NonAggressiveAliveCubes.Count);

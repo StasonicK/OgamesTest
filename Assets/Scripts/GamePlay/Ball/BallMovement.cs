@@ -14,7 +14,10 @@ namespace GamePlay.Ball
                 transform.position += transform.forward * _speed * Time.deltaTime;
         }
 
-        public void Move() =>
+        public void SetMovable() =>
             _isMovable = true;
+
+        public void SetStop() =>
+            _isMovable = false;
     }
 }

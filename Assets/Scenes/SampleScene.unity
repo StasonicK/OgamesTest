@@ -1023,8 +1023,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3879172911828085745, guid: 44699252f6808924bac0caaea173d4a1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1165,20 +1164,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2495199705780508786, guid: b4df6e27cfdde834aa8fdc7c7a69cebd,
+        type: 3}
+      propertyPath: _shootDelay
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5549822892212983366, guid: b4df6e27cfdde834aa8fdc7c7a69cebd,
         type: 3}
       propertyPath: m_Name
       value: Human
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430807929603240230, guid: b4df6e27cfdde834aa8fdc7c7a69cebd,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430807929603240230, guid: b4df6e27cfdde834aa8fdc7c7a69cebd,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
