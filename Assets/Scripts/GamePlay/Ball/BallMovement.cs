@@ -6,15 +6,15 @@ namespace GamePlay.Ball
     {
         [SerializeField] private float _speed;
 
-        private bool _isMove;
+        private bool _isMovable;
 
         private void Update()
         {
-            if (_isMove)
+            if (_isMovable)
                 transform.position += transform.forward * _speed * Time.deltaTime;
         }
 
         public void Move() =>
-            _isMove = true;
+            _isMovable = true;
     }
 }

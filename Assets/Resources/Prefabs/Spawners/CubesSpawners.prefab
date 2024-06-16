@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3741338902967488555}
   - component: {fileID: 1904380255036767113}
   - component: {fileID: 8994149020744883869}
-  - component: {fileID: 3338087773596201102}
+  - component: {fileID: 848259443877238058}
+  - component: {fileID: 7856923961593997881}
   m_Layer: 0
   m_Name: CubesSpawners
   m_TagString: Untagged
@@ -61,8 +62,6 @@ MonoBehaviour:
   _spawnDelaySec: 0.2
   _minCubesCount: 5
   _maxCubesCount: 5
-  _cubesMoveExecutor: {fileID: 0}
-  _cubesHolder: {fileID: 3338087773596201102}
 --- !u!114 &8994149020744883869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +78,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1c164296534c2c7469d497d1ceb097ca, type: 2}
   - {fileID: 2100000, guid: 974825bdf6e605249a25e5b69f232421, type: 2}
   - {fileID: 2100000, guid: 15cffc1a3165df140bd924e3b883a73c, type: 2}
---- !u!114 &3338087773596201102
+--- !u!114 &848259443877238058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +87,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7954052989760205213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19d48ad70784ce984c855ce7a83e25d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5519d516b0374259b47574def74346b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7856923961593997881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954052989760205213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047a2ac28f6a45318079de9a2e5fbbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2440619837559583266

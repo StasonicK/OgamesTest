@@ -480,8 +480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d436d149d3648a785c8e14fa6a6abb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubesHolder: {fileID: 0}
-  _shootCube: {fileID: 1915602299100797595}
   _shootDelay: 1
 --- !u!114 &1915602299100797595
 MonoBehaviour:
