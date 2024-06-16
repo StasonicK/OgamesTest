@@ -70,7 +70,7 @@ namespace GamePlay.CubesController
             if (_attackedCubeMovement != null)
             {
                 _aliveCubes.Remove(_number, out randomCube);
-                NonAggressiveCubesHolder.Instance.RemoveCube(_number);
+                // NonAggressiveCubesHolder.Instance.RemoveCube(_number);
                 AttackingCubeNumberShower.Instance.SetNumber($"{_number}");
                 return true;
             }

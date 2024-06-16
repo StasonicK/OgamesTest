@@ -9,6 +9,7 @@ namespace GamePlay.CubesController
     {
         private static NonAggressiveCubesHolder _instance;
 
+        private Dictionary<int, CubeMovement> _cubes;
         private Dictionary<int, CubeMovement> _nonAggressiveAliveCubes;
         private CubeMovement _attackedCubeMovement;
         private CubeMovement _prayCube;
@@ -20,6 +21,7 @@ namespace GamePlay.CubesController
         private void Awake()
         {
             DontDestroyOnLoad(this);
+            _cubes = new Dictionary<int, CubeMovement>();
             _nonAggressiveAliveCubes = new Dictionary<int, CubeMovement>();
         }
 
@@ -37,6 +39,7 @@ namespace GamePlay.CubesController
         public void AddCube(CubeMovement cube, int number)
         {
             _number = number;
+            _cubes.TryAdd(_number, cube);
             _nonAggressiveAliveCubes.TryAdd(_number, cube);
         }
 
