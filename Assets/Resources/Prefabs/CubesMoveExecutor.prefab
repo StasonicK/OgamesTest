@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8831229534894030142}
   - component: {fileID: 1397018503452091546}
-  - component: {fileID: 3879172911828085745}
+  - component: {fileID: 6303171935196674484}
   m_Layer: 0
   m_Name: CubesMoveExecutor
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4574f41738c64c869693ef1ec48a231b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3879172911828085745
+--- !u!114 &6303171935196674484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,6 +54,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7050061282281817953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb18e947340c49d2a3d45620ad99fc84, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a9eb70db0774f598a0ca9850eba64ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

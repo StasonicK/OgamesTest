@@ -31,6 +31,7 @@ namespace GamePlay.Spawners
 
         private void Awake()
         {
+            DontDestroyOnLoad(this);
             _cubesCount = Random.Range(_minCubesCount, _maxCubesCount + 1);
             CubesMoveExecutor.Instance.Initialize(_cubesCount);
         }
@@ -39,19 +40,26 @@ namespace GamePlay.Spawners
         {
             int cubeSpawnerNumber = 0;
             int cubeCounter = 0;
-            CubeMovement cubeMovement;
+            CubeMovement cube;
+            int number = 0;
 
             for (int i = 0; i < _cubesCount; i++)
             {
                 cubeSpawnerNumber = cubeCounter % _cubeSpawners.Length;
-                cubeMovement = _cubeSpawners[cubeSpawnerNumber]
+                cube = _cubeSpawners[cubeSpawnerNumber]
                     .Spawn(cubeCounter + 1, _cubeMaterialGetter.GetMaterial());
-                CubesMoveExecutor.Instance.Add(cubeMovement);
-                RandomCubeUpScaler.Instance.Add(cubeMovement.GetComponent<CubeSizeUpScaler>());
-                CubesHolder.Instance.AddCube(cubeMovement);
+                number = cube.GetComponent<CubeNumberHolder>().Number;
+                AddCube(cube, number);
                 cubeCounter++;
                 await UniTask.Delay((int)(_spawnDelaySec * Constants.SEC_TO_MILLISECS_MULTIPLIER));
             }
+        }
+
+        private void AddCube(CubeMovement cube, int number)
+        {
+            CubesMoveExecutor.Instance.Add(cube);
+            ShotableCubesHolder.Instance.AddCube(cube, number);
+            NonAggressiveCubesHolder.Instance.AddCube(cube, number);
         }
     }
 }

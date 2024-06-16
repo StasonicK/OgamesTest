@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GamePlay.Cube
 {
-    public class CubeNumberSetter : MonoBehaviour
+    public class CubeNumberHolder : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI[] _numberTexts;
 

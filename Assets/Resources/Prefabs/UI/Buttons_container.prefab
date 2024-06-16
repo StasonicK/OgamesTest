@@ -82,7 +82,7 @@ MonoBehaviour:
   _spawnCubesButton: {fileID: 5589095721843775486}
   _forceMoveAllButton: {fileID: 3746968850273256169}
   _startAttackModeButton: {fileID: 5191984928209545944}
-  _button4: {fileID: 2099595911913058161}
+  _chooseAggressorButton: {fileID: 2099595911913058161}
 --- !u!1 &654481377463326478
 GameObject:
   m_ObjectHideFlags: 0

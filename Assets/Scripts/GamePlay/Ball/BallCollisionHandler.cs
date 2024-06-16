@@ -14,7 +14,7 @@ namespace GamePlay.Ball
             }
             else if (other.collider.TryGetComponent(out CubeMovement cubeMovement))
             {
-                AttackedCubeSelector.Instance.CheckHitCube(cubeMovement);
+                ShootCubeSelector.Instance.CheckHitCube(cubeMovement);
                 Destroy(gameObject);
             }
         }

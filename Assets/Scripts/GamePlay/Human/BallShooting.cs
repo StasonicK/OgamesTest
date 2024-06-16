@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GamePlay.Human
 {
-    public class ShootCube : MonoBehaviour
+    public class BallShooting : MonoBehaviour
     {
         [SerializeField] private BallMovement _ballPrefab;
         [SerializeField] private Transform _respawnTransform;

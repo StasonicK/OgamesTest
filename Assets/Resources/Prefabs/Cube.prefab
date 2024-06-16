@@ -591,7 +591,6 @@ GameObject:
   - component: {fileID: 7054401119745788605}
   - component: {fileID: 8203564813271371503}
   - component: {fileID: 7600123503353260735}
-  - component: {fileID: 5137069787077351893}
   - component: {fileID: 1498662355445661048}
   - component: {fileID: 8073622961442940346}
   - component: {fileID: 4550830377598317937}
@@ -601,6 +600,9 @@ GameObject:
   - component: {fileID: 1169424221083180528}
   - component: {fileID: 5413769502984151233}
   - component: {fileID: 2476555314173112479}
+  - component: {fileID: 3490572571914213007}
+  - component: {fileID: 2328696073273585152}
+  - component: {fileID: 8736756043530026615}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -674,28 +676,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!195 &5137069787077351893
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4638590419772100329}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 4
 --- !u!65 &1498662355445661048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -839,6 +819,46 @@ MonoBehaviour:
   _scaleUpSize: 2
   _scaleDuration: 1
   _launchAtStart: 0
+--- !u!114 &3490572571914213007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638590419772100329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baddcdc9f2a149b594d1131ac238ae95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2328696073273585152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638590419772100329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa0a7c8c8614da581f1f3004f6a329a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _radius: 10
+--- !u!114 &8736756043530026615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638590419772100329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11c656879214ba48a194f373fe4573c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4816726910652373160
 GameObject:
   m_ObjectHideFlags: 0

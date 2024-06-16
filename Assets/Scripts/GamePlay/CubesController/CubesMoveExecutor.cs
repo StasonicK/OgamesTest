@@ -28,17 +28,25 @@ namespace GamePlay.CubesController
         public void Add(CubeMovement cubeMovement)
         {
             if (_needForceMove)
-                cubeMovement.SetMove();
+                cubeMovement.SetForwardMovement();
 
             _cubeMovements.Add(cubeMovement);
         }
 
-        public void ForceMoveAll()
+        public void ForceMoveForwardAll()
         {
             _needForceMove = true;
 
             for (int i = 0; i < _cubeMovements.Count; i++)
-                _cubeMovements[i].SetMove();
+                _cubeMovements[i].SetForwardMovement();
+        }
+
+        public void ForceSetMovableAll()
+        {
+            _needForceMove = true;
+
+            for (int i = 0; i < _cubeMovements.Count; i++)
+                _cubeMovements[i].SetMovable();
         }
     }
 }
