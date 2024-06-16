@@ -1,4 +1,6 @@
-﻿using GamePlay.Ball;
+﻿using Cysharp.Threading.Tasks;
+using GamePlay.Ball;
+using GamePlay.Pools;
 using UnityEngine;
 
 namespace GamePlay.Human
@@ -13,11 +15,13 @@ namespace GamePlay.Human
 
         public void Shoot(Transform cubeTransform)
         {
-            _ballMovement = Instantiate(_ballPrefab, _respawnTransform.position, Quaternion.identity);
+            _ballMovement = BallsPool.Instance.Get();
+            _ballMovement.transform.position = _respawnTransform.position;
             _ballRotation = _ballMovement.GetComponent<BallRotation>();
             _ballRotation.SetTarget(cubeTransform);
             _ballRotation.SetRotate();
-            _ballMovement.Move();
+            _ballMovement.SetMovable();
+            _ballMovement.GetComponent<BallLifetime>().Resume().Forget();
         }
     }
 }
